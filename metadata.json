@@ -1,0 +1,8 @@
+{
+  "name": "Aurora Sales Agency",
+  "description": "A modern, space-themed landing page for Aurora Sales Agency, featuring their core services in lead generation, marketing, and sales support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
