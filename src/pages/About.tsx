@@ -2,54 +2,36 @@ import { motion } from 'motion/react';
 import { ArrowRight, Handshake, Zap, Target, Hexagon, Rocket } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const experiences = [
+const domains = [
   {
-    role: "Founder & Outbound Strategist",
-    company: "Aurora Sales Agency",
-    date: "Jan 2020 - Present",
-    desc: "Helping businesses build predictable sales pipelines through sophisticated lead generation, B2B appointment setting, and CRM & outreach automation."
+    role: "Outbound Sales & Pipeline Generation",
+    category: "B2B Growth",
+    desc: "We build and execute sophisticated, multi-channel outbound systems using personalized automation to deliver predictable appointment setting and pipeline growth."
   },
   {
-    role: "Snr Account Manager",
-    company: "The Growth Center",
-    date: "Sep 2025 - Present",
-    desc: "Partnering with B2B SaaS companies to scale revenue. Monitored key SaaS metrics (ARR, conversion rates, retention) and optimized done-for-you pipeline growth systems."
+    role: "Digital Products & SaaS",
+    category: "Product Strategy",
+    desc: "From conceptualization to go-to-market strategies, we help software companies scale MRR, optimize user acquisition, and improve retention metrics."
   },
   {
-    role: "Account Manager",
-    company: "Recess",
-    date: "Apr 2025 - Sep 2025",
-    desc: "Managed the full sales cycle for an all-in-one business management platform. Empowered fitness studios with branded mobile apps and scheduling tools."
+    role: "Global Talent Outsourcing",
+    category: "Staff Augmentation",
+    desc: "We provide access to top-tier global talent across Software Engineering, Data Science, DevOps, and Sales—allowing you to scale your team efficiently."
   },
   {
-    role: "Business Development Lead",
-    company: "CodeCrew INC",
-    date: "Aug 2024 - Apr 2025",
-    desc: "Drove organic email list growth through cross-brand giveaways. Crafted personalized automation and engaging content for maximum deliverability."
+    role: "CRM & Sales Operations",
+    category: "Infrastructure",
+    desc: "We architect scalable CRM setups and complex automation workflows that remove friction, reduce manual tasks, and accelerate the sales cycle."
   },
   {
-    role: "Senior Business Development Partner",
-    company: "Coders Connect",
-    date: "Jan 2024 - Aug 2024",
-    desc: "Specialized in technology recruitment for global tech start-ups across Software Engineering, Data Science, and DevOps roles."
+    role: "Brand Partnerships",
+    category: "Strategic Alliances",
+    desc: "We design and execute cross-promotional campaigns and joint giveaways that drive organic email growth and mutually beneficial lead generation."
   },
   {
-    role: "Customer Success / BDR",
-    company: "The Sales Centre",
-    date: "Apr 2020 - Jan 2024",
-    desc: "Leveraged tools like Apollo and Dux-Soup for targeted outreach. Ensured clients exceeded growth targets by converting high-quality leads into loyal customers."
-  },
-  {
-    role: "Sales & Production Manager",
-    company: "Arum Group Holdings",
-    date: "Jan 2010 - Apr 2020",
-    desc: "Led complex construction sales and end-to-end project management across corporate, commercial, and residential markets."
-  },
-  {
-    role: "Sales & Biz Dev Exec",
-    company: "Discovery Limited",
-    date: "Apr 2004 - Jan 2010",
-    desc: "Specialized in outbound sales for healthcare and financial sectors, building strong relationships and driving value-driven conversations."
+    role: "Cybersecurity & IT Solutions",
+    category: "Technical Sales",
+    desc: "Navigating complex technical markets with specialized sales approaches tailored for cybersecurity, network infrastructure, and enterprise IT services."
   }
 ];
 
@@ -60,19 +42,19 @@ export default function About() {
         
         {/* Section 1: Intro & Mission */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-24 text-center max-w-4xl mx-auto"
+           initial={{ opacity: 0, y: 30 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.8 }}
+           className="mb-24 text-center max-w-4xl mx-auto"
         >
           <div className="inline-block px-4 py-1.5 bg-primary-900/30 rounded-full text-xs font-bold uppercase tracking-widest text-primary-300 mb-6 border border-primary-500/20 shadow-[0_0_15px_rgba(168,85,247,0.2)]">
-            Commander's Status
+            Agency Capabilities
           </div>
           <h1 className="text-4xl md:text-6xl font-light leading-tight mb-8 text-white">
-            Navigating the complexities of <span className="italic font-serif text-primary-400 font-bold">Revenue Growth.</span>
+            Navigating the complexities of <span className="italic font-serif text-primary-400 font-bold">Digital Growth.</span>
           </h1>
           <p className="text-white/60 text-lg md:text-xl leading-relaxed">
-            With a diverse background spanning Financial Services, SaaS, Recruitment, Cybersecurity, Email Marketing, Organic Lead List Growth Strategies, Software Animation, and B2B Global Trade—I bring a wealth of experience in Sales, Business Development, and Customer Success. My passion lies in crafting strategic sales approaches tailored to unique industry needs, driving explosive revenue growth, and building long-lasting client relationships.
+            Aurora is a full-service growth agency specializing in outsourced B2B sales, digital product development, and staff augmentation. We partner with fast-growing companies to architect sophisticated pipeline engines, deploy high-performing operational talent, and scale digital revenue streams. From crafting outbound infrastructure to placing top-tier technical and sales professionals, our team acts as an extension of yours to drive predictable growth.
           </p>
         </motion.div>
 
@@ -87,9 +69,9 @@ export default function About() {
           >
             <div className="absolute top-[-50px] right-[-50px] w-48 h-48 bg-primary-600/10 rounded-full blur-[50px] group-hover:bg-primary-500/20 transition-all"></div>
             <Zap className="w-10 h-10 text-primary-400 mb-6" />
-            <h3 className="text-2xl font-bold text-white mb-4">Adaptability & Precision</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">Adaptable Outsourcing</h3>
             <p className="text-white/50 leading-relaxed">
-              I thrive in dynamic environments—whether navigating complex financial solutions, leveraging cutting-edge SaaS technologies, or addressing evolving cybersecurity challenges. My ability to adapt fast and execute with precision ensures I consistently exceed client expectations and unlock sustainable growth.
+              We seamlessly integrate with your existing operations—whether deploying a remote data science team, building out your digital product ecosystem, or taking over edge-to-edge sales development—delivering precision and agility at scale.
             </p>
           </motion.div>
 
@@ -105,7 +87,7 @@ export default function About() {
             <Handshake className="w-10 h-10 text-indigo-400 mb-6" />
             <h3 className="text-2xl font-bold text-white mb-4">Strategic Brand Partnerships</h3>
             <p className="text-white/50 leading-relaxed">
-              Beyond core outbound strategy, I specialize in brand partnerships for joint giveaways. By aligning complementary brands on cross-promotional campaigns, we amplify reach, drive high-quality lead generation, and deliver measurable ROI—cultivating vast networks while sharing resources.
+              Beyond talent and pipeline creation, we specialize in cross-promotional campaigns. By aligning complementary brands on joint initiatives, we amplify reach, drive high-quality organic lead generation, and multiply your measurable ROI.
             </p>
           </motion.div>
         </div>
@@ -119,12 +101,12 @@ export default function About() {
           className="mb-24"
         >
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-light text-white mb-4">The <span className="italic font-serif text-primary-400 font-bold">Orbit</span> Trajectory</h2>
-            <p className="text-white/50 max-w-2xl mx-auto">A proven history of driving growth across fast-paced sectors and leading B2B organizations.</p>
+            <h2 className="text-3xl md:text-5xl font-light text-white mb-4">Our Specialized <span className="italic font-serif text-primary-400 font-bold">Domains</span></h2>
+            <p className="text-white/50 max-w-2xl mx-auto">Providing cross-functional expertise and scalable resources for modern digital enterprises.</p>
           </div>
 
           <div className="relative border-l-2 border-white/10 ml-4 md:ml-1/2 md:translate-x-[-1px] space-y-12">
-            {experiences.map((exp, idx) => (
+            {domains.map((domain, idx) => (
               <div key={idx} className="relative pl-8 md:pl-0">
                 {/* Timeline Node */}
                 <div className="absolute left-[-9px] md:left-1/2 md:-translate-x-1/2 top-1 w-4 h-4 rounded-full bg-space-950 border-2 border-primary-500 z-10 shadow-[0_0_10px_rgba(168,85,247,0.6)]"></div>
@@ -137,11 +119,10 @@ export default function About() {
                   className={`md:w-1/2 ${idx % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12 md:ml-auto'}`}
                 >
                   <div className="bg-white/5 border border-white/5 p-6 rounded-2xl hover:border-primary-500/20 hover:bg-white/10 transition-colors group">
-                    <span className="text-[10px] font-mono uppercase tracking-widest text-primary-300 mb-2 block">{exp.date}</span>
-                    <h4 className="text-xl font-bold text-white mb-1 group-hover:text-primary-400 transition-colors">{exp.role}</h4>
-                    <h5 className="text-sm font-medium text-white/70 mb-4">{exp.company}</h5>
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-primary-300 mb-2 block">{domain.category}</span>
+                    <h4 className="text-xl font-bold text-white mb-2 group-hover:text-primary-400 transition-colors">{domain.role}</h4>
                     <p className="text-white/40 text-sm leading-relaxed">
-                      {exp.desc}
+                      {domain.desc}
                     </p>
                   </div>
                 </motion.div>
