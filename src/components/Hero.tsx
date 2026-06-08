@@ -6,7 +6,7 @@ export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 px-6 z-10 overflow-hidden">
       <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
-        <div className="text-left relative z-10">
+        <div className="text-center lg:text-left relative z-10 flex flex-col items-center lg:items-start">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -39,7 +39,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg text-white/50 max-w-lg mb-10 leading-relaxed"
+            className="text-lg text-white/50 max-w-lg mx-auto lg:mx-0 mb-10 leading-relaxed"
           >
             Aurora empowers B2B companies with full-funnel lead generation, marketing engines, and dedicated support specialists. Turn your pipeline into predictable revenue.
           </motion.p>
@@ -48,7 +48,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex flex-col sm:flex-row items-start gap-4"
+            className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
           >
             <Link to="/services" className="h-12 px-8 rounded-full bg-primary-600 hover:bg-primary-500 text-white text-xs font-bold uppercase tracking-widest flex items-center gap-2 transition-all shadow-[0_0_30px_rgba(168,85,247,0.3)] hover:shadow-[0_0_40px_rgba(168,85,247,0.5)] group">
               Explore Services
@@ -61,30 +61,30 @@ export const Hero = () => {
         </div>
 
         {/* Visual Element: Rocket Landing / Orbit */}
-        <div className="relative h-[500px] w-full hidden lg:flex items-center justify-center perspective-1000">
+        <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] w-full flex items-center justify-center perspective-1000 mt-12 lg:mt-0 overflow-visible">
           {/* Constellation / Grid background */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.1),transparent_70%)]"></div>
           
           <motion.div 
-            className="relative w-[400px] h-[400px] rounded-full border border-white/5 border-dashed"
+            className="relative w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] rounded-full border border-white/5 border-dashed"
             animate={{ rotate: 360 }}
             transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
           >
             {/* Planet 1 */}
-            <div className="absolute top-0 left-1/2 -ml-8 -mt-8 w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-purple-900 shadow-[0_0_30px_rgba(99,102,241,0.4)] flex items-center justify-center">
-              <Star className="w-4 h-4 text-white/50" />
+            <div className="absolute top-0 left-1/2 -ml-6 -mt-6 sm:-ml-8 sm:-mt-8 w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-indigo-500 to-purple-900 shadow-[0_0_30px_rgba(99,102,241,0.4)] flex items-center justify-center">
+              <Star className="w-3 h-3 sm:w-4 sm:h-4 text-white/50" />
             </div>
             {/* Planet 2 */}
-            <div className="absolute bottom-10 right-10 w-24 h-24 rounded-full bg-gradient-to-tr from-fuchsia-600 to-purple-800 shadow-[0_0_40px_rgba(192,38,211,0.3)] opacity-60"></div>
+            <div className="absolute bottom-5 right-5 sm:bottom-10 sm:right-10 w-16 h-16 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-fuchsia-600 to-purple-800 shadow-[0_0_40px_rgba(192,38,211,0.3)] opacity-60"></div>
           </motion.div>
           
           <motion.div 
-            className="absolute w-[250px] h-[250px] rounded-full border border-primary-500/20"
+            className="absolute w-[180px] h-[180px] sm:w-[250px] sm:h-[250px] rounded-full border border-primary-500/20"
             animate={{ rotate: -360 }}
             transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           >
             {/* Small orbit item */}
-             <div className="absolute top-1/2 -left-3 w-6 h-6 rounded-full bg-primary-400 shadow-[0_0_20px_#a855f7]"></div>
+             <div className="absolute top-1/2 -left-2 sm:-left-3 w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-primary-400 shadow-[0_0_20px_#a855f7]"></div>
           </motion.div>
 
           {/* Central Rocket Landing */}
@@ -99,14 +99,14 @@ export const Hero = () => {
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="relative"
             >
-              <div className="w-32 h-32 bg-primary-900/40 border border-primary-500/30 rounded-full flex items-center justify-center backdrop-blur-md relative overflow-hidden">
+              <div className="w-24 h-24 sm:w-32 sm:h-32 bg-primary-900/40 border border-primary-500/30 rounded-full flex items-center justify-center backdrop-blur-md relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-primary-400/20 to-transparent"></div>
-                <Rocket className="w-16 h-16 text-primary-300 relative z-10" />
+                <Rocket className="w-12 h-12 sm:w-16 sm:h-16 text-primary-300 relative z-10" />
                 {/* Thruster glow */}
                 <motion.div 
                   animate={{ opacity: [0.5, 1, 0.5], scale: [0.8, 1.2, 0.8] }}
                   transition={{ duration: 0.5, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute bottom-0 w-8 h-8 bg-orange-500/50 blur-[15px] rounded-full translate-y-1/2"
+                  className="absolute bottom-0 w-6 h-6 sm:w-8 sm:h-8 bg-orange-500/50 blur-[15px] rounded-full translate-y-1/2"
                 />
               </div>
             </motion.div>
@@ -115,7 +115,7 @@ export const Hero = () => {
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 1, delay: 1 }}
-              className="mt-8 relative w-48 h-12"
+              className="mt-6 sm:mt-8 relative w-36 h-10 sm:w-48 sm:h-12"
             >
               <div className="w-full h-full border-2 border-primary-500/50 rounded-[100%] shadow-[0_0_20px_#a855f7_inset,0_0_20px_#a855f7] rotate-x-60 absolute"></div>
               <motion.div 

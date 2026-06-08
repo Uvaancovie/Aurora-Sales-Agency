@@ -46,7 +46,7 @@ export default function Contact() {
           className="md:col-span-7 bg-white/5 border border-white/10 rounded-[32px] p-10 backdrop-blur-md"
         >
           <form className="flex flex-col gap-6 w-full" onSubmit={(e) => e.preventDefault()}>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="flex flex-col gap-2">
                 <label className="text-[10px] uppercase tracking-widest text-white/50 font-bold ml-2">Commander Name</label>
                 <input 
