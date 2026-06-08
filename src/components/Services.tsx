@@ -38,22 +38,25 @@ export const Services = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 md:grid-rows-4 gap-4">
           {servicesData.map((service, index) => {
             const gridClasses = [
-              "md:col-span-7 md:row-span-2 bg-white/5 border border-white/10 overflow-hidden relative group", 
-              "md:col-span-5 md:row-span-2 bg-space-900 border border-white/5 group", 
-              "md:col-span-5 md:row-span-2 bg-indigo-950/20 border border-white/5 group", 
-              "md:col-span-7 md:row-span-2 bg-white/5 border border-white/10 relative overflow-hidden group" 
+              "md:col-span-7 md:row-span-2 bg-white/5 border border-white/10 overflow-hidden relative group hover:-translate-y-1 transition-transform duration-500", 
+              "md:col-span-5 md:row-span-2 bg-space-900 border border-white/5 group hover:-translate-y-1 transition-transform duration-500 relative overflow-hidden", 
+              "md:col-span-5 md:row-span-2 bg-indigo-950/20 border border-white/5 group hover:-translate-y-1 transition-transform duration-500 relative overflow-hidden", 
+              "md:col-span-7 md:row-span-2 bg-white/5 border border-white/10 relative overflow-hidden group hover:-translate-y-1 transition-transform duration-500 cursor-pointer" 
             ][index];
             
             return (
               <motion.div
                 key={service.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.7, delay: index * 0.1, type: "spring", bounce: 0.4 }}
                 className={gridClasses}
               >
-                <Link to={`/services/${service.id}`} className="block h-full w-full p-8 rounded-[32px] flex flex-col backdrop-blur-md transition-colors hover:border-primary-500/50">
+                {/* Animated Gradient Border Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary-500/0 via-primary-500/20 to-indigo-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                
+                <Link to={`/services/${service.id}`} className="block h-full w-full p-8 rounded-[32px] flex flex-col backdrop-blur-md transition-colors hover:border-primary-500/50 z-10 relative">
                   {index === 0 && (
                     <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(168,85,247,0.15),transparent_60%)] pointer-events-none group-hover:bg-[radial-gradient(circle_at_top_right,rgba(168,85,247,0.25),transparent_70%)] transition-all"></div>
                   )}
