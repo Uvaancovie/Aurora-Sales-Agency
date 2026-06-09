@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from "@vercel/analytics/react";
 import { StarBackground } from './components/StarBackground';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -30,6 +31,7 @@ export default function App() {
         <FloatingCTA />
         <Footer />
       </div>
+      <Analytics />
     </Router>
   );
 }
