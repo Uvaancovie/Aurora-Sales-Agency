@@ -60,7 +60,7 @@ export default function Contact() {
           <div className="space-y-6">
             <div className="flex flex-col gap-1">
               <span className="text-[10px] uppercase tracking-widest text-primary-200 font-mono">Comms Channel</span>
-              <a href="mailto:hello@aurorasalesagency.net" className="text-lg font-medium hover:text-white/80 transition-colors">hello@aurorasalesagency.net</a>
+              <a href="mailto:jason@aurorasalesagency.com" className="text-lg font-medium hover:text-white/80 transition-colors">jason@aurorasalesagency.com</a>
             </div>
             <div className="w-full h-px bg-white/20"></div>
             <div className="flex flex-col gap-1">
