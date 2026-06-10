@@ -1,9 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Analytics } from "@vercel/analytics/react";
 import { StarBackground } from './components/StarBackground';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
+<<<<<<< HEAD
 import AuroraVoiceChat from './components/AuroraVoiceChat';
+=======
+import FloatingCTA from './components/FloatingCTA';
+>>>>>>> c3ada919c104c035bcd3cd49d08997cfd33edbf1
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -28,12 +31,13 @@ export default function App() {
           </Routes>
         </div>
 
-
-
+        <FloatingCTA />
         <Footer />
+<<<<<<< HEAD
         <AuroraVoiceChat />
+=======
+>>>>>>> c3ada919c104c035bcd3cd49d08997cfd33edbf1
       </div>
-      <Analytics />
     </Router>
   );
 }
