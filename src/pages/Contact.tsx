@@ -134,10 +134,11 @@ export default function Contact() {
                 className="w-full bg-space-900/50 border border-white/10 rounded-2xl px-5 py-4 text-white text-sm focus:outline-none focus:border-primary-500/50 focus:bg-primary-900/10 transition-all"
               >
                 <option value="" disabled className="text-white/50">Select a budget range</option>
-                <option value="<R50k">Under R50,000</option>
-                <option value="R50k-R100k">R50,000 - R100,000</option>
-                <option value="R100k-R250k">R100,000 - R250,000</option>
-                <option value="R250k+">R250,000+</option>
+                <option value="R5k">R5,000</option>
+                <option value="R10k">R10,000</option>
+                <option value="R15k">R15,000</option>
+                <option value="R20k">R20,000</option>
+                <option value="R25k">R25,000</option>
               </select>
             </div>
 

@@ -30,3 +30,6 @@ export default async function handler(req: any, res: any) {
     res.status(500).json({ error: error.message || "Failed to process chat" });
   }
 }
+
+
+// we dont need this anymore we can dont have the chat 
