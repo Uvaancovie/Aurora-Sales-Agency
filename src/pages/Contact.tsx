@@ -5,6 +5,8 @@ export default function Contact() {
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [budget, setBudget] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
@@ -15,13 +17,15 @@ export default function Contact() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, company, message }),
+        body: JSON.stringify({ name, email, phone, company, budget, message }),
       });
       if (!res.ok) throw new Error("Failed");
       setStatus("success");
       setName("");
       setCompany("");
       setEmail("");
+      setPhone("");
+      setBudget("");
       setMessage("");
     } catch {
       setStatus("error");
@@ -98,16 +102,43 @@ export default function Contact() {
               </div>
             </div>
 
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="flex flex-col gap-2">
+                <label className="text-[10px] uppercase tracking-widest text-white/50 font-bold ml-2">Email Address *</label>
+                <input 
+                  type="email" 
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full bg-space-900/50 border border-white/10 rounded-2xl px-5 py-4 text-white text-sm focus:outline-none focus:border-primary-500/50 focus:bg-primary-900/10 transition-all placeholder:text-white/20"
+                  placeholder="commander@acme.com"
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label className="text-[10px] uppercase tracking-widest text-white/50 font-bold ml-2">Phone Number</label>
+                <input 
+                  type="tel" 
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  className="w-full bg-space-900/50 border border-white/10 rounded-2xl px-5 py-4 text-white text-sm focus:outline-none focus:border-primary-500/50 focus:bg-primary-900/10 transition-all placeholder:text-white/20"
+                  placeholder="+1 (555) 000-0000"
+                />
+              </div>
+            </div>
+
             <div className="flex flex-col gap-2">
-              <label className="text-[10px] uppercase tracking-widest text-white/50 font-bold ml-2">Email Address *</label>
-              <input 
-                type="email" 
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full bg-space-900/50 border border-white/10 rounded-2xl px-5 py-4 text-white text-sm focus:outline-none focus:border-primary-500/50 focus:bg-primary-900/10 transition-all placeholder:text-white/20"
-                placeholder="commander@acme.com"
-              />
+              <label className="text-[10px] uppercase tracking-widest text-white/50 font-bold ml-2">Project Budget</label>
+              <select
+                value={budget}
+                onChange={(e) => setBudget(e.target.value)}
+                className="w-full bg-space-900/50 border border-white/10 rounded-2xl px-5 py-4 text-white text-sm focus:outline-none focus:border-primary-500/50 focus:bg-primary-900/10 transition-all"
+              >
+                <option value="" disabled className="text-white/50">Select a budget range</option>
+                <option value="<R50k">Under R50,000</option>
+                <option value="R50k-R100k">R50,000 - R100,000</option>
+                <option value="R100k-R250k">R100,000 - R250,000</option>
+                <option value="R250k+">R250,000+</option>
+              </select>
             </div>
 
             <div className="flex flex-col gap-2">
