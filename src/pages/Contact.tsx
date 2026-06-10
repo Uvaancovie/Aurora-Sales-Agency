@@ -1,33 +1,6 @@
-import { useState, type FormEvent } from "react";
-import { motion } from "motion/react";
+import { motion } from 'motion/react';
 
 export default function Contact() {
-  const [name, setName] = useState("");
-  const [company, setCompany] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-
-  async function handleSubmit(e: FormEvent) {
-    e.preventDefault();
-    setStatus("loading");
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, company, message }),
-      });
-      if (!res.ok) throw new Error("Failed");
-      setStatus("success");
-      setName("");
-      setCompany("");
-      setEmail("");
-      setMessage("");
-    } catch {
-      setStatus("error");
-    }
-  }
-
   return (
     <main className="pt-32 pb-24 px-6 relative z-10 min-h-screen">
       <div className="max-w-6xl mx-auto grid md:grid-cols-12 gap-6">
@@ -56,7 +29,7 @@ export default function Contact() {
           <div className="space-y-6">
             <div className="flex flex-col gap-1">
               <span className="text-[10px] uppercase tracking-widest text-primary-200 font-mono">Comms Channel</span>
-              <a href="mailto:jason@aurorasalesagency.com" className="text-lg font-medium hover:text-white/80 transition-colors">jason@aurorasalesagency.com</a>
+              <a href="mailto:hello@aurorasalesagency.net" className="text-lg font-medium hover:text-white/80 transition-colors">hello@aurorasalesagency.net</a>
             </div>
             <div className="w-full h-px bg-white/20"></div>
             <div className="flex flex-col gap-1">
@@ -72,7 +45,7 @@ export default function Contact() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="md:col-span-7 bg-white/5 border border-white/10 rounded-[32px] p-10 backdrop-blur-md"
         >
-          <form className="flex flex-col gap-6 w-full" onSubmit={handleSubmit}>
+          <form className="flex flex-col gap-6 w-full" onSubmit={(e) => e.preventDefault()}>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="flex flex-col gap-2">
@@ -80,8 +53,6 @@ export default function Contact() {
                 <input 
                   type="text" 
                   required
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
                   className="w-full bg-space-900/50 border border-white/10 rounded-2xl px-5 py-4 text-white text-sm focus:outline-none focus:border-primary-500/50 focus:bg-primary-900/10 transition-all placeholder:text-white/20"
                   placeholder="John Shepard"
                 />
@@ -90,8 +61,6 @@ export default function Contact() {
                 <label className="text-[10px] uppercase tracking-widest text-white/50 font-bold ml-2">Company</label>
                 <input 
                   type="text" 
-                  value={company}
-                  onChange={(e) => setCompany(e.target.value)}
                   className="w-full bg-space-900/50 border border-white/10 rounded-2xl px-5 py-4 text-white text-sm focus:outline-none focus:border-primary-500/50 focus:bg-primary-900/10 transition-all placeholder:text-white/20"
                   placeholder="Acme Corp"
                 />
@@ -103,8 +72,6 @@ export default function Contact() {
               <input 
                 type="email" 
                 required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
                 className="w-full bg-space-900/50 border border-white/10 rounded-2xl px-5 py-4 text-white text-sm focus:outline-none focus:border-primary-500/50 focus:bg-primary-900/10 transition-all placeholder:text-white/20"
                 placeholder="commander@acme.com"
               />
@@ -114,31 +81,14 @@ export default function Contact() {
               <label className="text-[10px] uppercase tracking-widest text-white/50 font-bold ml-2">Project Details</label>
               <textarea 
                 rows={6}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
                 className="w-full bg-space-900/50 border border-white/10 rounded-2xl px-5 py-4 text-white text-sm focus:outline-none focus:border-primary-500/50 focus:bg-primary-900/10 transition-all placeholder:text-white/20 resize-none"
                 placeholder="How can we help you grow?"
               />
             </div>
 
-            <button 
-              type="submit" 
-              disabled={status === "loading"}
-              className="mt-4 w-full bg-primary-600 hover:bg-primary-500 text-white rounded-2xl py-4 text-sm font-bold uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(124,58,237,0.3)] hover:shadow-[0_0_30px_rgba(124,58,237,0.5)] disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {status === "loading" ? "Transmitting..." : "Transmit Data"}
+            <button type="submit" className="mt-4 w-full bg-primary-600 hover:bg-primary-500 text-white rounded-2xl py-4 text-sm font-bold uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(124,58,237,0.3)] hover:shadow-[0_0_30px_rgba(124,58,237,0.5)]">
+              Transmit Data
             </button>
-
-            {status === "success" && (
-              <p className="text-green-400 text-sm text-center mt-2">
-                Transmission received. We'll be in touch shortly.
-              </p>
-            )}
-            {status === "error" && (
-              <p className="text-red-400 text-sm text-center mt-2">
-                Transmission failed. Please try again or email us directly.
-              </p>
-            )}
           </form>
         </motion.div>
       </div>

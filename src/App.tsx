@@ -1,9 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Analytics } from "@vercel/analytics/react";
 import { StarBackground } from './components/StarBackground';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
-import VapiChatWidget from './components/VapiChatWidget';
+import FloatingCTA from './components/FloatingCTA';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -28,12 +27,9 @@ export default function App() {
           </Routes>
         </div>
 
-
-
+        <FloatingCTA />
         <Footer />
-        <VapiChatWidget />
       </div>
-      <Analytics />
     </Router>
   );
 }
