@@ -1,12 +1,17 @@
+import "dotenv/config";
 import express from "express";
 import path from "path";
 import { createServer as createViteServer } from "vite";
+import { BrevoClient, BrevoError } from "@getbrevo/brevo";
+
+const brevo = new BrevoClient({
+  apiKey: process.env.BREVO_API_KEY!,
+});
 
 async function startServer() {
   const app = express();
   const PORT = 3000;
 
-<<<<<<< HEAD
   app.use(express.json());
 
   app.post("/api/contact", async (req, res) => {
@@ -175,8 +180,6 @@ async function startServer() {
     }
   });
 
-=======
->>>>>>> c3ada919c104c035bcd3cd49d08997cfd33edbf1
   // Vite middleware for development
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
