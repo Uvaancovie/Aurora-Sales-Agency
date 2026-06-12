@@ -5,6 +5,7 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import AuroraVoiceChat from './components/AuroraVoiceChat';
 import FloatingCTA from './components/FloatingCTA';
+import { useVisitorTracker } from './hooks/useVisitorTracker';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -13,6 +14,7 @@ import ServiceDetail from './pages/ServiceDetail';
 import Contact from './pages/Contact';
 
 export default function App() {
+  useVisitorTracker();
   return (
     <Router>
       <ScrollToTop />
