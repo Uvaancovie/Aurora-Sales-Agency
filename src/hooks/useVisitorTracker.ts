@@ -15,7 +15,8 @@ interface VisitorData {
 
 export function useVisitorTracker() {
   useEffect(() => {
-    if (sessionStorage.getItem('aurora_visitor_tracked')) {
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    if (!isLocal && sessionStorage.getItem('aurora_visitor_tracked')) {
       return;
     }
 

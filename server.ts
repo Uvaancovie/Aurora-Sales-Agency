@@ -181,10 +181,12 @@ async function startServer() {
       }
 
       const clientIp = getClientIp(req);
+      const isLocal = clientIp === "::1" || clientIp === "127.0.0.1" || clientIp.startsWith("::ffff:127.0.0.1");
       const now = Date.now();
       const lastNotified = ipCooldowns.get(clientIp);
 
-      if (lastNotified && now - lastNotified < COOLDOWN_MS) {
+      // Bypass cooldown for local development requests to make testing easier
+      if (!isLocal && lastNotified && now - lastNotified < COOLDOWN_MS) {
         res.status(200).json({ success: true, notified: false });
         return;
       }
