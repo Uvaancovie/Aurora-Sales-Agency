@@ -254,35 +254,35 @@ function PillarDetail({ pillar }: { pillar: (typeof pillars)[0] }) {
             style={{ background: pillar.glowSoft }}
           />
 
-          <div className="relative z-10 p-8 md:p-10 h-full flex flex-col">
+          <div className="relative z-10 p-5 sm:p-8 md:p-10 h-full flex flex-col">
             {/* Header */}
-            <div className="flex items-start gap-5 mb-8">
+            <div className="flex items-start gap-3 sm:gap-5 mb-6 sm:mb-8">
               <div
-                className={`w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br ${pillar.color}`}
+                className={`w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0 bg-gradient-to-br ${pillar.color}`}
                 style={{ boxShadow: `0 0 30px ${pillar.glow}50` }}
               >
-                <Icon className="w-8 h-8 text-white" />
+                <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
-              <div>
+              <div className="min-w-0">
                 <div className={`text-[10px] font-bold uppercase tracking-widest mb-1 ${pillar.accent}`}>
                   {pillar.label}
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight">{pillar.title}</h3>
-                <p className={`text-sm mt-1 ${pillar.accent}`}>{pillar.subtitle}</p>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white leading-tight">{pillar.title}</h3>
+                <p className={`text-xs sm:text-sm mt-1 ${pillar.accent}`}>{pillar.subtitle}</p>
               </div>
             </div>
 
-            <p className="text-white/60 text-sm md:text-base leading-relaxed mb-8">{pillar.description}</p>
+            <p className="text-white/60 text-sm leading-relaxed mb-6 sm:mb-8">{pillar.description}</p>
 
             {/* Features */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 mb-6 sm:mb-8">
               {pillar.features.map((f, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.06 }}
-                  className="flex items-center gap-2.5 text-sm text-white/70"
+                  className="flex items-center gap-2.5 text-xs sm:text-sm text-white/70"
                 >
                   <CheckCircle className={`w-4 h-4 flex-shrink-0 ${pillar.accent}`} />
                   {f}
@@ -290,19 +290,21 @@ function PillarDetail({ pillar }: { pillar: (typeof pillars)[0] }) {
               ))}
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 mb-8">
+            {/* Stats — 1 col mobile, 3 col sm+ */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 sm:mb-8">
               {pillar.stats.map((s, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 + i * 0.08 }}
-                  className={`p-4 rounded-2xl border ${pillar.border} bg-white/[0.03] text-center`}
+                  className={`flex sm:flex-col items-center sm:items-center gap-4 sm:gap-0 p-4 rounded-2xl border ${pillar.border} bg-white/[0.03] sm:text-center`}
                 >
-                  <div className={`text-2xl font-black ${pillar.accent}`}>{s.value}</div>
-                  <div className="text-white/70 text-xs font-semibold mt-1">{s.label}</div>
-                  <div className="text-white/30 text-[10px] mt-0.5">{s.context}</div>
+                  <div className={`text-2xl sm:text-2xl font-black ${pillar.accent} sm:mb-0 w-20 sm:w-auto flex-shrink-0 sm:flex-shrink`}>{s.value}</div>
+                  <div className="flex-1 sm:flex-none">
+                    <div className="text-white/70 text-xs font-semibold sm:mt-1">{s.label}</div>
+                    <div className="text-white/30 text-[10px] mt-0.5">{s.context}</div>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -658,10 +660,10 @@ export default function DigitalSolutions() {
             </motion.p>
           </div>
 
-          {/* Explorer layout */}
-          <div className="grid lg:grid-cols-[340px_1fr] gap-6 items-start">
-            {/* Left – Pillar selector */}
-            <div className="flex flex-col gap-3">
+          {/* Explorer layout — stacks on mobile, side-by-side on lg+ */}
+          <div className="flex flex-col lg:grid lg:grid-cols-[340px_1fr] gap-4 lg:gap-6 items-start">
+            {/* Pillar selector */}
+            <div className="flex flex-col gap-2 sm:gap-3 w-full">
               {pillars.map((p, i) => (
                 <PillarCard
                   key={p.id}
@@ -673,8 +675,8 @@ export default function DigitalSolutions() {
               ))}
             </div>
 
-            {/* Right – Detail panel */}
-            <div className="min-h-[620px]">
+            {/* Detail panel — no fixed min-height on mobile */}
+            <div className="w-full min-h-0 lg:min-h-[620px]">
               <PillarDetail pillar={pillars[activePillar]} />
             </div>
           </div>
