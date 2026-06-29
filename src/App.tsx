@@ -12,6 +12,7 @@ import About from './pages/About';
 import ServicesPage from './pages/ServicesPage';
 import ServiceDetail from './pages/ServiceDetail';
 import Contact from './pages/Contact';
+import DigitalSolutions from './pages/DigitalSolutions';
 
 export default function App() {
   useVisitorTracker();
@@ -29,6 +30,7 @@ export default function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/services/:id" element={<ServiceDetail />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/digital-solutions" element={<DigitalSolutions />} />
           </Routes>
         </div>
 

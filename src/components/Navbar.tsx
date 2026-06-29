@@ -11,6 +11,10 @@ export const Navbar = () => {
     return location.pathname === path ? "text-white border-b border-primary-500 pb-1" : "hover:text-white transition-colors pb-1";
   };
 
+  const isActiveSub = (path: string) => {
+    return location.pathname.startsWith(path) ? "text-white border-b border-primary-500 pb-1" : "hover:text-white transition-colors pb-1";
+  };
+
   const closeMenu = () => setIsMobileMenuOpen(false);
 
   return (
@@ -33,6 +37,7 @@ export const Navbar = () => {
           <Link to="/" className={isActive('/')}>Home</Link>
           <Link to="/about" className={isActive('/about')}>About</Link>
           <Link to="/services" className={isActive('/services')}>Services</Link>
+          <Link to="/digital-solutions" className={isActiveSub('/digital-solutions')}>Digital & AI</Link>
           <Link to="/contact" className={isActive('/contact')}>Contact</Link>
         </div>
 
@@ -62,6 +67,7 @@ export const Navbar = () => {
               <Link to="/" onClick={closeMenu} className={isActive('/')}>Home</Link>
               <Link to="/about" onClick={closeMenu} className={isActive('/about')}>About</Link>
               <Link to="/services" onClick={closeMenu} className={isActive('/services')}>Services</Link>
+              <Link to="/digital-solutions" onClick={closeMenu} className={isActiveSub('/digital-solutions')}>Digital & AI</Link>
               <Link to="/contact" onClick={closeMenu} className={isActive('/contact')}>Contact</Link>
               <Link to="/contact" onClick={closeMenu} className="inline-block mt-4 text-center px-5 py-3 bg-primary-600 hover:bg-primary-500 rounded-full text-white font-bold transition-all w-full">
                 Initiate Launch
