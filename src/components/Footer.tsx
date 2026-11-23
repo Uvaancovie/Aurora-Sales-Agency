@@ -77,7 +77,7 @@ export const Footer = () => {
 
       {/* Bottom bar */}
       <div className="border-t border-white/5 px-8 md:px-10 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-[10px] text-white/25 font-mono uppercase tracking-[0.15em]">
-        <span>Coordinates: 26.2041° S, 28.0473° E · Johannesburg, ZA</span>
+        <span>Ballito, KwaZulu-Natal, South Africa · jason@aurorasalesagency.com · 073 980 9147</span>
         <span>Aurora Sales Agency © {new Date().getFullYear()}</span>
       </div>
     </footer>

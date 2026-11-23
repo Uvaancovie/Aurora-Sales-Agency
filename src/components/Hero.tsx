@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { ChevronRight, Rocket, Star } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { BOOKING_URL } from '../data/site';
 
 export const Hero = () => {
   return (
@@ -14,7 +14,7 @@ export const Hero = () => {
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/5 text-primary-300 text-[10px] uppercase tracking-widest font-bold mb-8 backdrop-blur-md"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-primary-400 animate-pulse"></span>
-            Elevating B2B Growth
+            Outbound sales for B2B companies
           </motion.div>
 
           <motion.h1 
@@ -23,9 +23,9 @@ export const Hero = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-5xl md:text-7xl font-sans font-light tracking-tight text-white mb-6 leading-[1.1]"
           >
-            Scale Your Sales.<br />
+            We fill your calendar with<br />
             <span className="italic font-serif text-primary-400 relative inline-block">
-              Ignite Your Growth.
+              qualified sales meetings.
               <motion.div 
                 className="absolute -bottom-2 left-0 w-full h-[1px] bg-gradient-to-r from-primary-400 to-transparent"
                 initial={{ scaleX: 0, originX: 0 }}
@@ -41,7 +41,7 @@ export const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg text-white/50 max-w-lg mx-auto lg:mx-0 mb-10 leading-relaxed"
           >
-            Aurora empowers B2B companies with full-funnel lead generation, marketing engines, and dedicated support specialists. Turn your pipeline into predictable revenue.
+            Aurora works as your outbound sales team. We build your lead lists, run email and LinkedIn outreach, follow up with warm calls and book meetings straight into your calendar. Your team just shows up and closes.
           </motion.p>
 
           <motion.div 
@@ -50,13 +50,13 @@ export const Hero = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
           >
-            <Link to="/services" className="h-12 px-8 rounded-full bg-primary-600 hover:bg-primary-500 text-white text-xs font-bold uppercase tracking-widest flex items-center gap-2 transition-all shadow-[0_0_30px_rgba(168,85,247,0.3)] hover:shadow-[0_0_40px_rgba(168,85,247,0.5)] group">
-              Explore Services
+            <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="h-12 px-8 rounded-full bg-primary-600 hover:bg-primary-500 text-white text-xs font-bold uppercase tracking-widest flex items-center gap-2 transition-all shadow-[0_0_30px_rgba(168,85,247,0.3)] hover:shadow-[0_0_40px_rgba(168,85,247,0.5)] group">
+              Book a 15-minute call
               <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <Link to="/contact" className="h-12 px-8 rounded-full bg-white/5 hover:bg-white/10 text-white text-xs font-bold uppercase tracking-widest border border-white/10 flex items-center transition-all">
-              Book a Strategy Call
-            </Link>
+            </a>
+            <a href="#packages" className="h-12 px-8 rounded-full bg-white/5 hover:bg-white/10 text-white text-xs font-bold uppercase tracking-widest border border-white/10 flex items-center transition-all">
+              See packages
+            </a>
           </motion.div>
         </div>
 

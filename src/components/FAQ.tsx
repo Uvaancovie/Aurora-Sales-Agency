@@ -4,24 +4,28 @@ import { ChevronDown } from 'lucide-react';
 
 const faqs = [
   {
-    question: "How does Aurora integrate with our in-house team?",
-    answer: "We seamlessly act as an extension of your company. We align with your internal communication tools (Slack, Teams), adopt your brand voice, and work directly with your stakeholders to ensure complete transparency and tight collaboration."
+    question: "Is there a long-term contract?",
+    answer: "No. We bill month to month. We recommend giving it three months, because the first weeks go into warming up mailboxes and building the pipeline, and results build from month two."
   },
   {
-    question: "What are the benefits of outsourcing to an agency vs. hiring internally?",
-    answer: "Outsourcing grants you immediate access to specialized, senior-level expertise without the traditional hiring lag, training costs, or long-term overhead. You get a fully functional growth engine or specialized team from day one, allowing you to scale capacity dynamically as needs change."
+    question: "Will emails come from my main domain?",
+    answer: "No. We set up separate domains and mailboxes that represent your company, so we can send at volume without putting your main domain's reputation at risk."
   },
   {
-    question: "What does your typical onboarding process look like?",
-    answer: "Our onboarding is streamlined into a rapid 14-day launch sequence. We start with a strategic kickoff, followed by deep-dive systems access, technical setup, and finalize with the deployment of your customized outbound or operational campaigns."
+    question: "Do you see my personal LinkedIn messages?",
+    answer: "No. On Ignite, your profile is connected to our platform and we only see replies to our campaigns. On Ascend and Supernova, we use three of our own warmed-up profiles, branded to your company."
   },
   {
-    question: "How do you track and report on performance?",
-    answer: "We believe in radical transparency. You'll receive continuous access to real-time performance dashboards, backed by weekly cadence calls and comprehensive end-of-month reporting to review KPIs, attribute revenue, and optimize strategies."
+    question: "Will the messages sound automated?",
+    answer: "No. Our team writes the copy for each industry and role, and real people handle every reply in your voice. If a question gets technical, we check with you before answering."
   },
   {
-    question: "Can your services scale as our company grows?",
-    answer: "Absolutely. Our infrastructure is designed to be highly elastic. Whether you need to ramp up outbound sales volume, deploy additional digital products, or scale your outsourced engineering team, we adapt to your growth trajectory instantly."
+    question: "Do I approve what goes out?",
+    answer: "Yes. You sign off your ideal client profile and messaging before anything is sent."
+  },
+  {
+    question: "What happens after a meeting is booked?",
+    answer: "It lands in your calendar with notes on the prospect and the conversation so far. You run the sales call, and your feedback helps us sharpen targeting."
   }
 ];
 
@@ -33,7 +37,7 @@ export const FAQ = () => {
   };
 
   return (
-    <section className="relative py-24 px-6 z-10 border-t border-white/5 bg-space-950/50">
+    <section id="faq" className="relative py-24 px-6 z-10 border-t border-white/5 bg-space-950/50">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <motion.div

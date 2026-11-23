@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useState, useEffect } from 'react';
 import { PhoneCall, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { BOOKING_URL } from '../data/site';
 
 export default function FloatingCTA() {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,20 +30,22 @@ export default function FloatingCTA() {
               animate={{ opacity: 1, x: 0 }}
               className="mr-4 bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-2 rounded-xl text-sm font-medium shadow-xl hidden sm:block"
             >
-              Free Discovery Call
+              Book a 15-minute call
             </motion.div>
           )}
           
           <div className="relative">
             <div className="absolute inset-0 bg-primary-500 rounded-full blur-[20px] opacity-50 animate-pulse"></div>
-            <Link
-              to="/contact"
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               className="relative w-14 h-14 bg-primary-600 hover:bg-primary-500 rounded-full flex items-center justify-center text-white shadow-lg border border-primary-400/50 transition-colors"
             >
               <PhoneCall className="w-6 h-6" />
-            </Link>
+            </a>
           </div>
           
           <button 

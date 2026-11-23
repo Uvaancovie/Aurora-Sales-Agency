@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { BOOKING_URL } from '../data/site';
 
 export const Navbar = () => {
   const location = useLocation();
@@ -41,9 +42,9 @@ export const Navbar = () => {
           <Link to="/contact" className={isActive('/contact')}>Contact</Link>
         </div>
 
-        <Link to="/contact" className="hidden md:block px-5 py-2 bg-primary-600/10 border border-primary-500/50 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary-600/20 transition-all text-white">
-          Initiate Launch
-        </Link>
+        <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className="hidden md:block px-5 py-2 bg-primary-600/10 border border-primary-500/50 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary-600/20 transition-all text-white">
+          Book a call
+        </a>
 
         {/* Mobile Toggle */}
         <button 
@@ -69,9 +70,9 @@ export const Navbar = () => {
               <Link to="/services" onClick={closeMenu} className={isActive('/services')}>Services</Link>
               <Link to="/digital-solutions" onClick={closeMenu} className={isActiveSub('/digital-solutions')}>Digital & AI</Link>
               <Link to="/contact" onClick={closeMenu} className={isActive('/contact')}>Contact</Link>
-              <Link to="/contact" onClick={closeMenu} className="inline-block mt-4 text-center px-5 py-3 bg-primary-600 hover:bg-primary-500 rounded-full text-white font-bold transition-all w-full">
-                Initiate Launch
-              </Link>
+              <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="inline-block mt-4 text-center px-5 py-3 bg-primary-600 hover:bg-primary-500 rounded-full text-white font-bold transition-all w-full">
+                Book a call
+              </a>
             </div>
           </motion.div>
         )}

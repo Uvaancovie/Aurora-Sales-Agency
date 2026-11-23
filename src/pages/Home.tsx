@@ -1,15 +1,27 @@
 import { Hero } from '../components/Hero';
-import { Services } from '../components/Services';
-import { Industries } from '../components/Industries';
+import { ClientsStrip } from '../components/home/ClientsStrip';
+import { Problem } from '../components/home/Problem';
+import { Included } from '../components/home/Included';
+import { HowItWorks } from '../components/home/HowItWorks';
+import { Results } from '../components/home/Results';
+import { Packages } from '../components/home/Packages';
+import { FreeCheck } from '../components/home/FreeCheck';
 import { FAQ } from '../components/FAQ';
+import { FinalCTA } from '../components/home/FinalCTA';
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <Services />
-      <Industries />
+      <ClientsStrip />
+      <Problem />
+      <Included />
+      <HowItWorks />
+      <Results />
+      <Packages />
+      <FreeCheck />
       <FAQ />
+      <FinalCTA />
     </main>
   );
 }
