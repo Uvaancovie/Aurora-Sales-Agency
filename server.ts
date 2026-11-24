@@ -3,6 +3,7 @@ import express from "express";
 import path from "path";
 import { createServer as createViteServer } from "vite";
 import { BrevoClient, BrevoError } from "@getbrevo/brevo";
+import freeCheckHandler from "./api/free-check";
 
 const brevo = new BrevoClient({
   apiKey: process.env.BREVO_API_KEY!,
@@ -13,6 +14,8 @@ async function startServer() {
   const PORT = 3000;
 
   app.use(express.json());
+
+  app.post("/api/free-check", (req, res) => freeCheckHandler(req, res));
 
   app.post("/api/contact", async (req, res) => {
     try {
