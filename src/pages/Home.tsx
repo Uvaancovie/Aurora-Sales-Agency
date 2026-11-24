@@ -4,6 +4,7 @@ import { Problem } from '../components/home/Problem';
 import { Included } from '../components/home/Included';
 import { HowItWorks } from '../components/home/HowItWorks';
 import { Results } from '../components/home/Results';
+import { ReplyCards } from '../components/home/ReplyCards';
 import { Packages } from '../components/home/Packages';
 import { FreeCheck } from '../components/home/FreeCheck';
 import { FAQ } from '../components/FAQ';
@@ -18,6 +19,7 @@ export default function Home() {
       <Included />
       <HowItWorks />
       <Results />
+      <ReplyCards />
       <Packages />
       <FreeCheck />
       <FAQ />

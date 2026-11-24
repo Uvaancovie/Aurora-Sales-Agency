@@ -13,6 +13,7 @@ import ServicesPage from './pages/ServicesPage';
 import ServiceDetail from './pages/ServiceDetail';
 import Contact from './pages/Contact';
 import DigitalSolutions from './pages/DigitalSolutions';
+import RoiCalculator from './pages/RoiCalculator';
 
 export default function App() {
   useVisitorTracker();
@@ -31,6 +32,7 @@ export default function App() {
             <Route path="/services/:id" element={<ServiceDetail />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/digital-solutions" element={<DigitalSolutions />} />
+            <Route path="/roi-calculator" element={<RoiCalculator />} />
           </Routes>
         </div>
 

@@ -28,6 +28,7 @@ export const Footer = () => {
               { to: '/', label: 'Home' },
               { to: '/about', label: 'About' },
               { to: '/services', label: 'Services' },
+              { to: '/roi-calculator', label: 'ROI Calculator' },
               { to: '/contact', label: 'Contact' },
             ].map((l) => (
               <li key={l.to}>

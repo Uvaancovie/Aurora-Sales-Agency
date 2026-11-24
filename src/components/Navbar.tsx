@@ -39,6 +39,7 @@ export const Navbar = () => {
           <Link to="/about" className={isActive('/about')}>About</Link>
           <Link to="/services" className={isActive('/services')}>Services</Link>
           <Link to="/digital-solutions" className={isActiveSub('/digital-solutions')}>Digital & AI</Link>
+          <Link to="/roi-calculator" className={isActive('/roi-calculator')}>ROI Tool</Link>
           <Link to="/contact" className={isActive('/contact')}>Contact</Link>
         </div>
 
@@ -69,6 +70,7 @@ export const Navbar = () => {
               <Link to="/about" onClick={closeMenu} className={isActive('/about')}>About</Link>
               <Link to="/services" onClick={closeMenu} className={isActive('/services')}>Services</Link>
               <Link to="/digital-solutions" onClick={closeMenu} className={isActiveSub('/digital-solutions')}>Digital & AI</Link>
+              <Link to="/roi-calculator" onClick={closeMenu} className={isActive('/roi-calculator')}>ROI Tool</Link>
               <Link to="/contact" onClick={closeMenu} className={isActive('/contact')}>Contact</Link>
               <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="inline-block mt-4 text-center px-5 py-3 bg-primary-600 hover:bg-primary-500 rounded-full text-white font-bold transition-all w-full">
                 Book a call
